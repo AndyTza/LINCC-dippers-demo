@@ -105,12 +105,10 @@ def prepare_lc(time, mag, mag_err, flag, band, band_of_study='r', flag_good=0, q
         if custom_q:
             rmv = q
         else:
-            print ("Selecting rmv....")
             # Selection and preparation of the light curve (default selection on )
             rmv = (flag == flag_good) & (mag_err>0) & (band==band_of_study) & (~np.isnan(time)) & (~np.isnan(mag)) & (~np.isnan(mag_err)) # remove nans!
         
         time, mag, mag_err = time[rmv], mag[rmv], mag_err[rmv]
-        print ("..........", len(time))
         #plt.figure(figsize=(15,5))
         #plt.scatter(time, mag, color='gray')
 

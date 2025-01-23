@@ -252,15 +252,12 @@ def evaluate_updated(time_cat, mag_cat, mag_err_cat, flag_cat, band_cat, custom_
     # Summary information
     summary_ = {}
 
-    print (flag_cat[0])
     # make into .values
     #time_cat, mag_cat, mag_err_cat, flag_cat, band_cat = time_cat.values, mag_cat.values, mag_err_cat.values, flag_cat.values, band_cat.values
 
     # Digest my light curve. Select band, good detections & sort
     time0, mag, mag_err = prepare_lc(time_cat, mag_cat, mag_err_cat, flag_cat, band_cat, 
                                     band_of_study='r', flag_good=0, q=None, custom_q=False)
-    #print (len(time0))
-    #print (time0)
 
     mag_err  = mag_err # flux error to mag error
 
